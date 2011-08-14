@@ -4,10 +4,10 @@ one:
   from: 1
   to: MyString
   subject: MyString
-  body: MyString
+  body: MyText
 
 two:
   from: 1
   to: MyString
   subject: MyString
-  body: MyString
+  body: MyText
