@@ -1,7 +1,7 @@
 class CreateMessages < ActiveRecord::Migration
   def self.up
     create_table :messages do |t|
-      t.integer :from
+      t.integer :user_id
       t.string :to
       t.string :subject
       t.text :body

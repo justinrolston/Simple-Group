@@ -1,13 +1,13 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
 one:
-  from: 1
+  user_id: 1
   to: MyString
   subject: MyString
   body: MyText
 
 two:
-  from: 1
+  user_id: 1
   to: MyString
   subject: MyString
   body: MyText

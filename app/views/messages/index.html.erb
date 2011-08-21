@@ -2,7 +2,7 @@
 
 <table>
   <tr>
-    <th>From</th>
+    <th>User</th>
     <th>To</th>
     <th>Subject</th>
     <th>Body</th>
@@ -13,7 +13,7 @@
 
 <% @messages.each do |message| %>
   <tr>
-    <td><%= message.from %></td>
+    <td><%= message.user_id %></td>
     <td><%= message.to %></td>
     <td><%= message.subject %></td>
     <td><%= message.body %></td>

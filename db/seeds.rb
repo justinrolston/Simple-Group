@@ -8,3 +8,4 @@
 
   User.create(:name => 'Justin Rolston', :email => 'justinrolston@gmail.com', :password => 'test', :password_confirmation => 'test')
   User.create(:name => 'Sarah Rolston', :email => 'justinrolston+sarah@gmail.com', :password => 'test', :password_confirmation => 'test')
+

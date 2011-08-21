@@ -1,6 +1,4 @@
 class MessagesController < ApplicationController
-  # GET /messages
-  # GET /messages.xml
   def index
     @messages = Message.all
 
@@ -10,8 +8,6 @@ class MessagesController < ApplicationController
     end
   end
 
-  # GET /messages/1
-  # GET /messages/1.xml
   def show
     @message = Message.find(params[:id])
 
@@ -21,8 +17,6 @@ class MessagesController < ApplicationController
     end
   end
 
-  # GET /messages/new
-  # GET /messages/new.xml
   def new
     @message = Message.new
 
@@ -32,16 +26,13 @@ class MessagesController < ApplicationController
     end
   end
 
-  # GET /messages/1/edit
   def edit
     @message = Message.find(params[:id])
   end
 
-  # POST /messages
-  # POST /messages.xml
   def create
     @message = Message.new(params[:message])
-    @message.from = current_user
+    @message.user_id = current_user.id
 
     respond_to do |format|
       if @message.save
@@ -54,8 +45,6 @@ class MessagesController < ApplicationController
     end
   end
 
-  # PUT /messages/1
-  # PUT /messages/1.xml
   def update
     @message = Message.find(params[:id])
 
@@ -70,8 +59,6 @@ class MessagesController < ApplicationController
     end
   end
 
-  # DELETE /messages/1
-  # DELETE /messages/1.xml
   def destroy
     @message = Message.find(params[:id])
     @message.destroy
