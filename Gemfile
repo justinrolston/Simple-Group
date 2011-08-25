@@ -5,8 +5,6 @@ gem 'rails', '3.0.9'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
-
 gem 'bcrypt-ruby', :require => 'bcrypt'
 
 # Use unicorn as the web server
@@ -17,9 +15,6 @@ gem 'bcrypt-ruby', :require => 'bcrypt'
 
 # To use debugger (ruby-debug for Ruby 1.8.7+, ruby-debug19 for Ruby 1.9.2+)
 # gem 'ruby-debug'
-group :development do
-  gem 'ruby-debug19', :require => 'ruby-debug'
-end
 
 # Bundle the extra gems:
 # gem 'bj'
@@ -32,6 +27,13 @@ end
 # and rake tasks are available in development mode:
 group :development, :test do
   gem 'web-app-theme', '>= 0.6.2'
+  gem 'ruby-debug19', :require => 'ruby-debug'
+  gem 'sqlite3'
 end
+
+group :production do
+  gem 'pg'
+end
+
 gem 'css3buttons', '0.9.5'
 

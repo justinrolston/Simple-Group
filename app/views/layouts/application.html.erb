@@ -13,6 +13,7 @@
       <h1><a href="/">Simple Group</a></h1>
       <div id="user-navigation">
         <ul class="wat-cf">
+          <li>
           <% if current_user %>
             <li><a href="/users/<%= current_user.id %>/edit/"><%= t("web-app-theme.profile", :default => current_user.name) %></a> |
             <a href="/log_out" class="logout"><%= t("web-app-theme.logout", :default => "Logout") %></a></li
