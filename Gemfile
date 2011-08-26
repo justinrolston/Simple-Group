@@ -29,7 +29,6 @@ group :development, :test do
   gem 'web-app-theme', '>= 0.6.2'
   gem 'ruby-debug19', :require => 'ruby-debug'
   gem 'sqlite3'
-  gem 'css3buttons', '0.9.5'
 end
 
 group :production do
@@ -37,4 +36,5 @@ group :production do
   gem 'pg'
 end
 
+gem 'css3buttons', '0.9.5'
 
