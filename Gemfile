@@ -26,7 +26,6 @@ gem 'bcrypt-ruby', :require => 'bcrypt'
 # put test-only gems in this group so their generators
 # and rake tasks are available in development mode:
 group :development, :test do
-  gem 'web-app-theme', '>= 0.6.2'
   gem 'ruby-debug19', :require => 'ruby-debug'
   gem 'sqlite3'
 end

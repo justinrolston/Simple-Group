@@ -3,47 +3,18 @@
 <head>
   <title>Simple Group</title>
   <%= css3buttons_stylesheets :include_reset => false %>
-  <%= stylesheet_link_tag "web-app-theme/base", "web-app-theme/themes/default/style", "web-app-theme/override", :cache => true %>
-  <%= javascript_include_tag :defaults, :cache => true %>
+  <%= stylesheet_link_tag :all %>
+  <%= javascript_include_tag :defaults %>
   <%= csrf_meta_tag %>
 </head>
 <body>
-  <div id="container">
-    <div id="header">
-      <h1><a href="/">Simple Group</a></h1>
-      <div id="user-navigation">
-        <ul class="wat-cf">
-          <li>
-          <% if current_user %>
-            <li><a href="/users/<%= current_user.id %>/edit/"><%= t("web-app-theme.profile", :default => current_user.name) %></a> |
-            <a href="/log_out" class="logout"><%= t("web-app-theme.logout", :default => "Logout") %></a></li
-          <% end %>
-        </ul>
-      </div>
-      <div id="main-navigation">
-        <ul class="wat-cf"></ul>
-      </div>
-    </div>    
-    <div id="wrapper" class="wat-cf">
-      <div class="flash">
-        <% flash.each do |type, message| -%>
-          <div class="message <%= type %>">
-            <p><%= message %></p>
-          </div>
-        <% end -%>
-      </div>
-      <div id="main">
-        <%= yield %>
-        <div id="footer">
-          <div class="block">
-            <p>Copyright &copy; <%= Time.now.year %> Simple Group</p>
-          </div>      
-        </div>
-      </div>
-      <div id="sidebar">
-        <%= yield :sidebar %>
-      </div>
-    </div>    
+  <div>
+    <% if current_user %>
+      <b><%= current_user.name %></b> 
+      <a href="/logout">Logout</a> 
+    <% end %>
   </div>
+<%= yield %>
+
 </body>
 </html>
