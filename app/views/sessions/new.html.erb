@@ -1,25 +1,14 @@
-<div id="box"> 
-  <div class="block" id="block-login"> 
-    <h2>Login</h2> 
-    <div class="content login"> 
-      <div class="flash"> 
-        <div class="message notice"> 
-          <p>Logged in successfully</p> 
-        </div> 
-      </div> 
-
-      <%= form_tag sessions_path do %>
-        <div class="group wat-cf"> 
-          <%= label_tag :email %><br />
-          <%= text_field_tag :email, params[:email] %>
-        </div>
-        <div class="group wat-cf"> 
-          <%= label_tag :password %><br />
-          <%= password_field_tag :password %>
-        </div>
-        <div class="group wat-cf"> 
-            <%= submit_tag 'Login' %>
-        </div>
-      <% end %>
-    </div> 
-  </div> 
+<% flash.each do |name, msg| %>
+  <%= content_tag :div, msg, :id => "error_explanation" %>
+<% end %>
+<%= form_tag sessions_path do %> 
+  <div class="field">
+    <%= label_tag :email %><br />
+    <%= text_field_tag :email, params[:email] %>
+    </div> <div class="field">
+    <%= label_tag :password %><br />
+    <%= password_field_tag :password %>
+    </div> <div class="field">
+    <%= submit_tag 'Login' %>
+  </div>
+<% end %>
