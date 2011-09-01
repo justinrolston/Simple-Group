@@ -10,7 +10,7 @@
   <body>
     <div style="width:100%" >
       <h1>Simple Group</h1>
-      <h2> <%= current_user.name %></h2>
+      <h2> <%= current_user.name if current_user %></h2>
       <% if current_user %>
         <%= link_to 'Home', home_index_path %> |
         <%= link_to 'Users', users_path %> | 
