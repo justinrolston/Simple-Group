@@ -5,7 +5,7 @@ class NotifierTest < ActionMailer::TestCase
     mail = Notifier.send_group_message(messages(:one))
     assert_equal "MyString", mail.subject
     assert_equal ["MyString"], mail.to
-    assert_equal ["justinrolston@gmail.com"], mail.from
+    assert_equal ["justinrolston+simplegroup@gmail.com"], mail.from
     assert_match "MyText", mail.body.encoded
   end
 
