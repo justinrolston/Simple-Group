@@ -1,14 +1,4 @@
 SimpleGroup::Application.routes.draw do
-  get "home/index"
-
-  resources :messages
-
-  get       "logout" => "sessions#destroy", :as => "logout"
-  get       "login"  => "sessions#new",     :as => "login"
-  root      :to       => "home#index"
-  resources :users
-  resources :sessions
-
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -21,7 +11,10 @@ SimpleGroup::Application.routes.draw do
   # This route can be invoked with purchase_url(:id => product.id)
 
   # Sample resource route (maps HTTP verbs to controller actions automatically):
-  #   resources :products
+  resources :users
+  resources :sessions
+  resources :messages
+
 
   # Sample resource route with options:
   #   resources :products do
@@ -58,8 +51,11 @@ SimpleGroup::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  # root :to => "welcome#index"
+  get "home/index"
+   root :to => 'home#index'
 
+   get "logout" => "sessions#destroy", :as => "logout"
+   get "login" => "sessions#new", :as => "login"
   # See how all your routes lay out with "rake routes"
 
   # This is a legacy wild controller route that's not recommended for RESTful applications.
