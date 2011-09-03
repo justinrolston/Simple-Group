@@ -1,8 +1,8 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>User:</b>
-  <%= @message.user_id %>
+  <b>From:</b>
+  <%= @message.user.name %>
 </p>
 
 <p>
@@ -21,5 +21,4 @@
 </p>
 
 
-<%= link_to 'Edit', edit_message_path(@message) %> |
-<%= link_to 'Back', messages_path %>
+<%= button_link_to 'Back', messages_path %>

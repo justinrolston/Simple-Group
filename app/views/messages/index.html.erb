@@ -2,28 +2,20 @@
 
 <table>
   <tr>
-    <th>User</th>
-    <th>To</th>
+    <th>From</th>
     <th>Subject</th>
-    <th>Body</th>
-    <th></th>
-    <th></th>
     <th></th>
   </tr>
 
 <% @messages.each do |message| %>
   <tr>
-    <td><%= message.user_id %></td>
-    <td><%= message.to %></td>
+    <td><%= message.user.name %></td>
     <td><%= message.subject %></td>
-    <td><%= message.body %></td>
-    <td><%= link_to 'Show', message %></td>
-    <td><%= link_to 'Edit', edit_message_path(message) %></td>
-    <td><%= link_to 'Destroy', message, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= pill_button_link_to 'Show', message %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Message', new_message_path %>
+<%= button_link_to 'New Message', new_message_path %>
