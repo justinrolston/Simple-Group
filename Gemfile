@@ -1,11 +1,40 @@
 source 'http://rubygems.org'
 
 gem 'rails', '3.1.0'
+gem 'bcrypt-ruby', :require => 'bcrypt'
+gem 'jquery-rails'
+gem 'css3buttons'
+gem 'execjs'
+gem 'therubyracer'
+
+group :assets do
+  gem 'sass-rails', "  ~> 3.1.0"
+  gem 'coffee-rails', "~> 3.1.0"
+  gem 'uglifier'
+end
+
+group :development, :test do
+  gem 'ruby-debug19', :require => 'ruby-debug'
+  gem 'sqlite3'
+end
+
+# To use debugger
+# gem 'ruby-debug19', :require => 'ruby-debug'
+
+group :test do
+  # Pretty printed test output
+  gem 'turn', :require => false
+end
+
+
+group :production do
+  gem 'thin'
+  gem 'pg'
+end
+
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
-
-gem 'bcrypt-ruby', :require => 'bcrypt'
 
 # Use unicorn as the web server
 # gem 'unicorn'
@@ -25,15 +54,4 @@ gem 'bcrypt-ruby', :require => 'bcrypt'
 # Bundle gems for the local environment. Make sure to
 # put test-only gems in this group so their generators
 # and rake tasks are available in development mode:
-group :development, :test do
-  gem 'ruby-debug19', :require => 'ruby-debug'
-  gem 'sqlite3'
-end
-
-group :production do
-  gem 'thin'
-  gem 'pg'
-end
-
-gem 'css3buttons'
 

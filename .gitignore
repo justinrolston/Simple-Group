@@ -8,3 +8,5 @@ doc/
 *.swp
 *~
 .project
+.sass-cache/
+public/assets/
