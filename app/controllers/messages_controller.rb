@@ -33,6 +33,9 @@ class MessagesController < ApplicationController
   def create
     @message = Message.new(params[:message])
     @message.user_id = current_user.id
+    User.all.each do |u|
+      @message.to << u.email + ";"
+    end
 
     respond_to do |format|
       if @message.save

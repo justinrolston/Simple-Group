@@ -6,6 +6,7 @@ gem 'jquery-rails'
 gem 'css3buttons'
 gem 'execjs'
 gem 'therubyracer'
+gem 'simple-navigation'
 
 group :assets do
   gem 'sass-rails', "  ~> 3.1.0"
@@ -17,9 +18,6 @@ group :development, :test do
   gem 'ruby-debug19', :require => 'ruby-debug'
   gem 'sqlite3'
 end
-
-# To use debugger
-# gem 'ruby-debug19', :require => 'ruby-debug'
 
 group :test do
   # Pretty printed test output
